@@ -68,12 +68,26 @@ knowledge2 = And(
         Or(And(AKnight, BKnight), And(AKnave, BKnave)), # Or both are knight, or both are knave
         AKnave # Or this afirmattion is True
     ),
+    # Both informations cannot be true
+    Not(
+        And(
+            Or(And(AKnight, BKnight), And(AKnave, BKnave)),
+            AKnave
+        )
+    ),
 
     # "We are of different kind", if this is false, so B is a Knave
     Or(
         Or(And(AKnight, BKnave), And(AKnave, BKnight)), # Or A is a Knight and B is a Knave, or A is a Knave and B is a Knight
-        BKnight # Or this afirmattion is True
-    )    
+        BKnave # Or this afirmattion is True
+    ),
+    # Both informations cannot be true
+    Not(
+        And(
+            Or(And(AKnight, BKnave), And(AKnave, BKnight)),
+            BKnave
+        )
+    ),
 )
 
 # Puzzle 3
