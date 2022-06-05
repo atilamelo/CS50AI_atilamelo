@@ -1,7 +1,5 @@
 import itertools
-from msilib import knownbits
 import random
-from xml.dom import HierarchyRequestErr
 
 
 class Minesweeper():
@@ -85,8 +83,6 @@ class Minesweeper():
         """
         return self.mines_found == self.mines
 
-    def return_board(self):
-        return self.board
 
 class Sentence():
     """
@@ -104,9 +100,6 @@ class Sentence():
     def __eq__(self, other):
         return self.cells == other.cells and self.count == other.count
     
-    def __ne__(self, other):
-        return self.cells != other.cells
-
     def __str__(self):
         return f"{self.cells} = {self.count}"
 
